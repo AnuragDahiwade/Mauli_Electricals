@@ -7,7 +7,6 @@ const menuBtn = document.querySelector("#menu-button");
 const navLinks = document.querySelector('#nav-part2')
 
 
-
 // Onload of the window or screen
 window.onload = function() {
     AdjustLogosToScreen()
@@ -46,3 +45,57 @@ function AdjustLogosToScreen() {
     }
 
 }
+
+
+// page 2 animaiton on the elements hover
+var page2_right_elem = document.querySelectorAll(".page2-cont-right")
+var page2_right_elem_img = document.querySelector(".page2-cont-right img")
+
+page2_right_elem.forEach(function(elem){
+    elem.addEventListener("mouseenter", function (){
+        gsap.to(elem.childNodes[3], {
+            opacity: 1,
+            scale: 1.2
+        })
+    })
+
+    elem.addEventListener("mouseleave", function (){
+        gsap.to(elem.childNodes[3], {
+            opacity: 0,
+            scale: 0
+        })
+    })
+
+    // Add touch event listeners for mobile devices
+    elem.addEventListener("touchstart", function (dets) {
+        gsap.to(elem.childNodes[3], {
+            opacity: 1,
+            scale: 1.2
+        })
+    })
+
+    elem.addEventListener("touchmove", function (dets) {
+        var touch = dets.touches[0]
+        gsap.to(elem.childNodes[3], {
+            x: touch.clientX - elem.getBoundingClientRect().x - 80,
+            y: touch.clientY - elem.getBoundingClientRect().y - 100
+        })
+    })
+
+    elem.addEventListener("touchend", function (){
+        gsap.to(elem.childNodes[3], {
+            opacity: 0,
+            scale: 0
+        })
+    })
+
+    // Add mouse event listeners for desktop devices
+    elem.addEventListener("mousemove", function (dets) {
+        gsap.to(elem.childNodes[3], {
+            x: dets.x - elem.getBoundingClientRect().x - 20,
+            y: dets.y - elem.getBoundingClientRect().y - 50
+        })
+    })
+})
+
+

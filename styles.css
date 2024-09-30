@@ -347,6 +347,13 @@ nav #nav-part2 h4:hover {
   fill: black;
 }
 
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 #page1 {
   position: relative;
   height: 100vh;
@@ -431,13 +438,12 @@ h3 {
   padding: 1rem;
   white-space: nowrap;
   overflow: hidden;
-  /* display: flex; */
 
 }
 
 #moving-div .move {
   display: inline-block;
-  animation: mobe 6s 0s linear infinite;
+  animation: mobe 15s 0s linear infinite;
   background: transparent;
 }
 #moving-div .move img {
@@ -474,6 +480,12 @@ h3 {
   right: 0;
   z-index: 2;
 }
+
+@media (max-width: 425px) {
+  .title {
+    width: 85%;
+  }
+}
 @media (max-width: 768px) {
   #page1 h1 {
     font-size: 9vw;
@@ -491,8 +503,23 @@ h3 {
   #page1-services h3 {
     padding: 5px 5px;
   }
-}
 
+  #moving-div {
+    margin-bottom: 10vw;
+    width: 90%;
+  }
+
+  #moving-div .move {
+    animation: mobe 15s 0s linear infinite;
+  }
+  #moving-div .move img {
+    height: 10vh;
+  }
+  #page1 h1 svg {
+    width: 6vw;
+    height: 6vw;
+  }
+}
 
 
 
@@ -500,6 +527,171 @@ h3 {
 
 #page2 {
   height: 100vh;
-  width: 100%;
+  width: 80%;
   background-color: #111111;
+  position: relative;
+  padding: 2vw 0;
+  border-top: 1px solid #555;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.title {
+  width: 80%;
+  margin-bottom: 1rem;
+}
+[id *= "page2-cont"] {
+  width: 100%;
+  height: 25%; 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1vw 0;
+}
+
+.page2-cont-left {
+  height: 100%;
+  width: 40%;
+  font-size: 2vw;
+  text-transform: uppercase;
+  margin-bottom: .3rem;
+  /* background-color: #555; */
+}
+
+.page2-cont-right {
+  height: 100%;
+  width: 55%;
+  position: relative;
+  border-bottom: 1px solid #555;
+  /* background-color: #555; */
+}
+.page2-cont-right img {
+  height: 7vw;
+  width: 7vw;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  scale: 0;
+  z-index: 4 !important;
+}
+
+.page2-cont-right h4 {
+  font-size: 1.5vw;
+  font-weight: 400;
+  z-index: 3 !important;
+}
+
+
+@media (max-width: 768px) {
+  #page2 {
+    flex-direction: column;
+    width: 95%;
+
+  }
+  .title{
+    width: 85%;
+  }
+  [id *= "page2-cont"] {
+    width: 100%;
+    /* height: 25%;  */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw 0;
+  }
+
+  .page2-cont-left {
+    height: 100%;
+    width: 90%;
+    font-size: 3.5vw;
+    text-transform: uppercase;
+    /* background-color: #555; */
+  }
+  
+  .page2-cont-right {
+    height: 100%;
+    width: 90%;
+    position: relative;
+    border-bottom: 2px solid #555;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .page2-cont-right img {
+    height: 15vw;
+    width: 15vw;
+  }
+  
+  .page2-cont-right h4 {
+    font-size: 2.4vw;
+    font-weight: 400;
+    z-index: 3 !important;
+  }
+}
+
+@media (max-width: 425px) {
+  #page2 {
+    flex-direction: column;
+    width: 95%;
+
+  }
+
+  [id *= "page2-cont"] {
+    width: 100%;
+    /* height: 25%;  */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw 0;
+  }
+
+  .page2-cont-left {
+    height: 50%;
+    width: 90%;
+    font-size: 5vw;
+    text-transform: uppercase;
+    /* background-color: #555; */
+  }
+  
+  .page2-cont-right {
+    height: 100%;
+    width: 90%;
+    position: relative;
+    border-bottom: 2px solid #555;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .page2-cont-right img {
+    height: 15vw;
+    width: 15vw;
+  }
+  
+  .page2-cont-right h4 {
+    font-size: 3vw;
+    font-weight: 400;
+    z-index: 3 !important;
+  }
+}
+
+
+
+
+
+
+
+#page3 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-image: url(./public/electrician.jpg);
+  background-size: cover;
 }

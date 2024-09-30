@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mauli Electicals</title>
     <link rel="stylesheet" href="./styles.css">
+    <script type="text/JavaScript">
+        //courtesy of BoogieJack.com
+        function killCopy(e){
+        return false
+        }
+        function reEnable(){
+        return true
+        }
+        document.onselectstart=new Function ("return false")
+        if (window.sidebar){
+        document.onmousedown=killCopy
+        document.onclick=reEnable
+        }
+        </script>
 </head>
 <body>
         <!-- Site PreLoader start -->
@@ -74,8 +88,6 @@
                         <img src="./public/wires-transparent.png" alt="" srcset="">
                         <img src="./public/wiring.jpeg" alt="" srcset="">
                         <img src="./public/coolers.jpeg" alt="" srcset="">
-                    </div>
-                    <div class="move">
                         <img src="./public/electrical-circuit.png" alt="" srcset="">
                         <img src="./public/fitting.png" alt="" srcset="">
                         <img src="./public/light.png" alt="" srcset="">
@@ -90,12 +102,72 @@
                         <img src="./public/wires-transparent.png" alt="" srcset="">
                         <img src="./public/wiring.jpeg" alt="" srcset="">
                         <img src="./public/coolers.jpeg" alt="" srcset="">
+                        <img src="./public/electrical-circuit.png" alt="" srcset="">
+                        <img src="./public/fitting.png" alt="" srcset="">
+                        <img src="./public/light.png" alt="" srcset="">
+                        <img src="./public/wires-transparent.png" alt="" srcset="">
+                        <img src="./public/wiring.jpeg" alt="" srcset="">
+                        <img src="./public/coolers.jpeg" alt="" srcset="">
+                    </div>
+
+                </div>
+            </div>
+
+            <h1 class="title">Our Services</h1>
+            <div id="page2">
+                <div id="page2-cont1">
+                    <div class="page2-cont-left">
+                        Housing, Commmercial and Industrial wiring
+                    </div>
+                    <div class="page2-cont-right">
+                        <h4>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi architecto sint molestiae ducimus optio pariatur minima laboriosam odio in quidem.
+                        </h4>
+                   
+                        <img src="./public/residential-electrical-works-2c-wiring-500x500.webp" alt="">
+                    </div>
+                </div>
+                <div id="page2-cont2">
+                    <div class="page2-cont-left">
+                        All types of electrical equipment fitting and installation.
+                    </div>
+
+                    <div class="page2-cont-right">
+
+                        <h4>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, eveniet rem natus pariatur accusantium recusandae nulla quia aut quas labore illo at. Tempora, temporibus architecto!
+                        </h4>
+                        <img src="./public/electrical equipment fitting.avif" alt="">
+                    </div>
+                </div>
+                <div id="page2-cont3">
+                    <div class="page2-cont-left">
+                        Solar installation
+                    </div>
+                    <div class="page2-cont-right">
+                        <h4>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, unde accusantium? Error, cupiditate fuga! Laborum, officiis?
+                        </h4>
+                        <img src="./public/solar installation.jpg" alt="">
+                    </div>
+                </div>
+                <div id="page2-cont4">
+                    <div class="page2-cont-left">
+                        Electical Panel installation
+                    </div>
+                    <div class="page2-cont-right">
+                        <h4>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates natus fugiat iusto, necessitatibus inventore tempora optio, temporibus nulla quibusdam eligendi rerum numquam.
+                        </h4>
+                        <img src="./public/electrical equipment fitting.avif" alt="">
                     </div>
                 </div>
             </div>
 
-            <div id="page2">
-
+            <div id="page3">
+                <div id="page3-center">
+                    
+                </div>
             </div>
         </div>
     </div>
@@ -134,6 +206,69 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
 
     <script>
+        // Get Magnito
+        const magnito = document.querySelector('.magnito')
+        const magnitotext = document.querySelector('.magnito .text')
+      
+        // Mouse moves Stuff
+        const activateMagnito = (event) => {
+          let boundBox = magnito.getBoundingClientRect()
+          const magnitoStrength = 50
+          const magnitoTextStrength = 73
+      
+          let newX = (event.clientX - boundBox.left) / magnito.offsetWidth - 0.5
+          let newY = (event.clientY - boundBox.top) / magnito.offsetHeight - 0.5
+      
+          // move button to its new pos
+          gsap.to(magnito, {
+            duration: 1,
+            x: newX * magnitoStrength,
+            y: newY * magnitoStrength,
+            ease: Power4.easeOut
+          })
+      
+          gsap.to(magnitotext, {
+            duration: 1,
+            x: newX * magnitoTextStrength,
+            y: newY * magnitoTextStrength,
+            ease: Power4.easeOut
+          })
+        }
+      
+        // Mouse leaves Stuff
+        const resetMagnito = (event) => {
+          // move the button to its default position
+          gsap.to(magnito, {
+            duration: 1,
+            x: 0,
+            y: 0,
+            ease: Elastic.easeOut
+          })
+          // move the button Text to its default position
+          gsap.to(magnitotext, {
+            duration: 1,
+            x: 0,
+            y: 0,
+            ease: Elastic.easeOut
+          })
+        }
+      
+        // Add touch event listeners for mobile devices
+        magnito.addEventListener('touchmove', (event) => {
+          const touch = event.touches[0]
+          activateMagnito({
+            clientX: touch.clientX,
+            clientY: touch.clientY
+          })
+        })
+      
+        magnito.addEventListener('touchend', resetMagnito)
+      
+        // Add mouse event listeners for desktop devices
+        magnito.addEventListener('mousemove', activateMagnito)
+        magnito.addEventListener('mouseleave', resetMagnito)
+      </script>
+    <!-- <script>
         // Get Magnito
         const magnito = document.querySelector('.magnito')
         const magnitotext = document.querySelector('.magnito .text')
@@ -194,7 +329,7 @@
 
         magnito.addEventListener('mousemove', activateMagnito)
         magnito.addEventListener('mouseleave', resetMagnito )
-    </script>
+    </script> -->
 
 <script src="./script.js"></script>
 
