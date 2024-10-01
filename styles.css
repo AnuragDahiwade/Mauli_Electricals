@@ -3,6 +3,7 @@
   --secondaryBgColor: #ebecd0;
   --calltoAction: #ff914d;
   --calltoAction2: #9CFC97;
+  --cta: #0DA34E;
   --textColor: #E5E5CB;
 
   --bgColor1: #191919;
@@ -35,13 +36,31 @@
   /* Changes thumb color on hover */
 }
 
+.jaini-purva-regular {
+  font-family: "Jaini Purva", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
 
+.space-grotesk {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.afacad-flux-{
+  font-family: "Afacad Flux", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: gilroy;
+  font-family: "Space Grotesk";
   color: #fff;
   background-color: #111111;
 }
@@ -263,6 +282,7 @@ nav #nav-part2 {
 
 nav #nav-part2 h4 {
   text-transform: uppercase;
+  font-family: "Afacad Flux";
   font-weight: 400;
   font-size: 1.5vw;
   transition: color .5s ease-in-out;
@@ -270,7 +290,7 @@ nav #nav-part2 h4 {
 }
 
 nav #nav-part2 h4:hover {
-  color: var(--calltoAction);
+  color: var(--calltoAction2);
   animation: wobble-hor-bottom .8s both;
   animation-delay: .2s;
 }
@@ -326,7 +346,8 @@ nav #nav-part2 h4:hover {
   border-radius: .2rem;
   padding: .2rem .6rem;
   font-weight: 600;
-  transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
+  fill: transparent;
+  transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out, fill .5s ease-in-out;
 }
 
 #lets-talk-btn svg {
@@ -334,16 +355,18 @@ nav #nav-part2 h4:hover {
   max-width: 1.4rem;
   min-width: .8rem;
   transition: fill .4s ease-in-out;
+  fill: white;
 }
 
 
 #lets-talk-btn:hover {
-  background-color: var(--calltoAction);
+  background-color: var(--calltoAction2);
   color: black;
   border: .1rem solid var(--calltoAction2);
 }
 
 #lets-talk-btn:hover svg {
+  background-color: transparent;
   fill: black;
 }
 
@@ -398,6 +421,7 @@ nav #nav-part2 h4:hover {
 }
 
 #page1 p {
+  font-family: "Afacad Flux";
   text-align: center;
   font-weight: 400;
   font-size: 1.5vw;
@@ -537,6 +561,7 @@ h3 {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin-bottom: 2rem;
 }
 .title {
   width: 80%;
@@ -576,13 +601,14 @@ h3 {
   position: absolute;
   opacity: 0;
   scale: 0;
-  z-index: 4 !important;
+  /* z-index: 4 !important; */
 }
 
 .page2-cont-right h4 {
+  font-family: "Afacad Flux";
   font-size: 1.5vw;
   font-weight: 400;
-  z-index: 3 !important;
+  /* z-index: 3 !important; */
 }
 
 
@@ -631,7 +657,7 @@ h3 {
   .page2-cont-right h4 {
     font-size: 2.4vw;
     font-weight: 400;
-    z-index: 3 !important;
+    /* z-index: 3 !important; */
   }
 }
 
@@ -678,7 +704,7 @@ h3 {
   .page2-cont-right h4 {
     font-size: 3vw;
     font-weight: 400;
-    z-index: 3 !important;
+    /* z-index: 3 !important; */
   }
 }
 
@@ -691,7 +717,522 @@ h3 {
 #page3 {
   height: 100vh;
   width: 100%;
+  margin-bottom: .3rem;
   position: relative;
   background-image: url(./public/electrician.jpg);
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#page3-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+
+}
+#page3-center h5{
+  background-color: white;
+  border-radius: 1rem;
+  margin-top: .2rem;
+  color: black;
+  font-size: 1.5vw;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  transform: translateY(15%);
+  opacity: 0;
+  transition: opacity .5s ease-in-out, transform .5s .1s ease-in-out;
+}
+
+#page3-center:hover h5{
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+
+#page3-center .icon {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 4vw 4vw;
+  max-width: 10rem;
+  max-height: 10rem;
+}
+
+#page3-center .icon i {
+  font-size: 5vw;
+  background-color: white;
+  color: black;
+  border-radius: 5%;
+
+}
+
+#page3 video {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  object-fit: cover;
+  transform: scaleX(0.7) scaleY(0);
+  border-radius: 30px;
+  opacity: 0;
+}
+
+
+.svg-background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 768px) {
+  #page3 {
+    background-image: url(./public/verticalElectrician.png);
+  }
+
+  #page3-center h5{
+    font-size: 2vw;
+    transition: none;
+    opacity: 0;
+
+  }
+
+  #page3-center .icon {
+    padding: 7vw 7vw;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Contact us css starts here  */
+#contactUs {
+  min-height: 100vh;
+  width: 80%;
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+#contactUs-left{
+  /* background-color: #555; */
+  width: 50%;
+  height: 100%;
+  padding: 0 .5rem;
+}
+
+
+#contactUs .contact-title-first{
+  font-size: 3vw;
+}
+
+#contactUs .contact-title-second{
+  color: #555;
+}
+
+
+#contactUs-praises{
+  width: 100%;
+  margin-top: .5rem;
+}
+#contactUs-praises .praises-divs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .3rem;
+}
+#contactUs-praises [class*="contact-praise" ]{
+  width: 48%;
+  height: 8rem;
+  background-color: #1F1F1F;
+  border-radius: .3rem;
+  padding: .4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: .9rem;
+}
+
+#contactUs-praises [class*="contact-praise" ] h1, h6{
+  background-color: transparent;
+}
+#contactUs-praises [class*="contact-praise" ] h1{
+  font-size: xx-large;
+}
+#contactUs-praises [class*="contact-praise" ] h6{
+  font-weight: 400;
+}
+
+
+#owners-views {
+
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+#owners-views .doupleQuote {
+  width: 12%;
+
+}
+#owners-views .views {
+
+  margin-top: .5rem;
+  width: 85%;
+}
+
+#owners-views .views .view-text{
+  font-family: "Afacad Flux";
+
+}
+
+
+.owner-info {
+  margin-top: .8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.owner-profile-photo {
+  width: 18%;
+  background-color: #1F1F1F;
+  border-radius: 10%;
+  padding: 1%;
+}
+.owner-profile-photo img{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10%;
+}
+.owner-name {
+  width: 78%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.owner-name h2:nth-child(1) {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.owner-name h2:nth-child(2) {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+
+#contactUs-right{
+  background-color: #ffffff;
+  width: 50%;
+  height: 100%;
+  padding: 1vw 2rem;
+  padding-bottom: 0;
+  border-radius: .4rem;
+  display: flex;
+  flex-direction: column;
+
+}
+
+#contactUs-right h1 {
+  color: #111111;
+  font-size: 3.5vw;
+  background-color: transparent;
+}
+
+#contact-form {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 2rem;
+}
+
+#contact-form label{
+  background-color: transparent;
+  transform: translateY(25px);
+  color: #555;
+  z-index: 5;
+  padding-left: .4rem;
+}
+
+#contact-form input{
+  z-index: 3;
+  background-color: transparent;
+  height: 2rem;
+  width: 100%;
+  border: none;
+  padding-left: .4rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #555;
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+
+#contact-form input:focus{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--calltoAction2);
+  border-left: 1px solid var(--calltoAction2);
+
+}
+
+#contact-form button{
+  margin-top: 1rem;
+  width: 15rem;
+  height: 3rem;
+  text-transform: uppercase;
+  padding: .5rem 1.8rem;
+  border-radius: 3rem;
+  background-color: var(--cta);
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+#contactUs-right svg {
+  width: 100%;
+  margin-top: 1rem;
+
+  transform: rotate(180deg) translateY(-.5rem);
+  background-color: transparent;
+
+}
+#contactUs-right svg path {
+  fill: #111111;
+}
+
+
+
+@media (max-width: 768px) {
+  #contactUs {
+    width: 100%;
+    flex-direction: column;
+  }
+  #contactUs-left{
+    /* background-color: #555; */
+    width: 95%;
+    height: 100%;
+    padding: 0 .5rem;
+  }
+  #contactUs-right{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 95%;
+  }
+  #contactUs-right h1 {
+    color: black;
+    font-size: 7vw;
+    background-color: transparent;
+  }
+  #contactUs .contact-title-first {
+    font-size: 6vw;
+  }
+
+}
+
+
+
+
+
+
+
+#footer {
+  margin-top: 4rem;
+  width: 100%;
+  min-height: 40vh;
+  background-color: #191919;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 2rem;
+}
+
+#location-sec{
+  width: 40%;
+  margin-left: .4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: transparent;
+}
+
+
+#location-sec .footer-loc-elem{
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+
+#location-sec .footer-loc-elem .footer-loc-img{
+  width: 20%;
+  background-color: transparent;
+}
+#location-sec .footer-loc-elem .footer-loc-img img{
+  width: 80%;
+  max-width: 3rem;
+  border-radius: 5px;
+  background-color: white;
+  padding: .5rem;
+
+}
+
+
+#location-sec .footer-loc-elem .footer-col-container{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: transparent;
+
+}
+
+.footer-loc-elem-title {
+  background-color: transparent;
+  font-size: x-large;
+  font-weight: 600;
+  font-family: "Afacad Flux";
+}
+.footer-loc-elem-text {
+  background-color: transparent;
+}
+
+
+#social-media-sec {
+  background-color: transparent;
+  width: 40%;
+  height: inherit;
+}
+
+#social-media-secs{
+  background-color: transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.social-media-links{
+  background-color: transparent;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.social-media-links:nth-child(1){
+  margin-left: 5%;
+}
+.social-media-links:nth-child(2){
+  margin-left: 20%;
+}
+.social-media-links:nth-child(3){
+  margin-left: 35%;
+}
+.social-media-name {
+  background-color: transparent;
+  font-family: "Afacad Flux";
+  font-weight: 500;
+  font-size: x-large;
+  text-transform: uppercase;
+}
+
+.social-media-img {
+  background-color: transparent;
+  width: 30%;
+  max-width: 3rem;
+}
+a{
+  background-color: transparent;
+  
+}
+.social-media-img img{
+  width: 80%;
+  border-radius: 5px;
+  background-color: white;
+  padding: .2rem;
+}
+
+
+#mauli-name-footer {
+  background-color: transparent;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.mauli-name-footer-letter{
+  background-color: transparent;
+  color: var(--calltoAction2);
+  font-family: "Afacad Flux";
+  font-weight: 700;
+  font-size: xx-large;
+}
+
+@media (max-width: 768px) {
+  #footer{
+    flex-direction: column;
+  }
+
+  #location-sec{
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+
+  #social-media-sec{
+    width: 90%;
+    margin-bottom: 2rem;
+
+  }
+  .social-media-links{
+    width: 60%;
+  }
+  .social-media-links:nth-child(1){
+    margin-left: 15%;
+  }
+  .social-media-links:nth-child(2){
+    margin-left: 30%;
+  }
+  .social-media-links:nth-child(3){
+    margin-left: 45%;
+  }
+
+  #mauli-name-footer {
+    background-color: #555;
+    padding: .3rem;
+    border-radius: .5rem;
+    width: 90%;
+    flex-direction: row;
+    margin-bottom: 2rem;
+
+  }
 }
