@@ -1,8 +1,5 @@
 
 const rootElement = document.documentElement
-// const navLogoFront = document.querySelector("#navLogoFront")
-// const navLogoBack = document.querySelector("#navLogoBack")
-//menu-button display
 const menuBtn = document.querySelector("#menu-button");
 const navLinks = document.querySelector('#nav-part2')
 

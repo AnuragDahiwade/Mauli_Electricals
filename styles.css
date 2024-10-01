@@ -566,6 +566,7 @@ h3 {
 .title {
   width: 80%;
   margin-bottom: 1rem;
+  color: var(--calltoAction2);
 }
 [id *= "page2-cont"] {
   width: 100%;
@@ -1072,6 +1073,7 @@ h3 {
   display: flex;
   flex-direction: row;
   padding: 1rem 2rem;
+  padding-bottom: 3.2rem;
 }
 
 #location-sec{
@@ -1204,14 +1206,21 @@ a{
   }
 
   #location-sec{
-    width: 90%;
+    width: 100%;
     margin-bottom: 2rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #555;
+  }
+
+  .footer-loc-elem{
+    margin-bottom: .4rem;
   }
 
   #social-media-sec{
-    width: 90%;
+    width: 100%;
     margin-bottom: 2rem;
-
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #555;
   }
   .social-media-links{
     width: 60%;
@@ -1230,7 +1239,7 @@ a{
     background-color: #555;
     padding: .3rem;
     border-radius: .5rem;
-    width: 90%;
+    width: 100%;
     flex-direction: row;
     margin-bottom: 2rem;
 
